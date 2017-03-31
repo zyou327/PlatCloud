@@ -9,14 +9,14 @@ datahelper.ajaxCache = function (url, callback) {
         success: function (data) {
             callback(data)
         },
-        
+
         error: function (msg) {
             alert(msg);
         }
     })
 };
 var datatype;
-Date.prototype.Format = function(fmt) {
+Date.prototype.Format = function (fmt) {
     var o = {
         "M+": this.getMonth() + 1, //月份 
         "d+": this.getDate(), //日 
@@ -34,16 +34,30 @@ Date.prototype.Format = function(fmt) {
 $.parseDate = function (dateStr, dateFormat) {
     var date = new Date();
     var o =
-    {
-        "y+": function (year) { date.setFullYear(year) },
-        "M+": function (month) { date.setMonth(month - 1,1) }, //month
-        "d+": function (day) { date.setDate(day) },    //day
-        "h+": function (hours) { date.setHours(hours) },   //hour
-        "m+": function (minutes) { date.setMinutes(minutes) }, //minute
-        "s+": function (seconds) { date.setSeconds(seconds) }, //second
-        //			"q+" : Math.floor((this.getMonth()+3)/3),  //quarter
-        "S": function (milliseconds) { date.setMilliseconds(milliseconds) } //millisecond
-    };
+        {
+            "y+": function (year) {
+                date.setFullYear(year)
+            },
+            "M+": function (month) {
+                date.setMonth(month - 1, 1)
+            }, //month
+            "d+": function (day) {
+                date.setDate(day)
+            },    //day
+            "h+": function (hours) {
+                date.setHours(hours)
+            },   //hour
+            "m+": function (minutes) {
+                date.setMinutes(minutes)
+            }, //minute
+            "s+": function (seconds) {
+                date.setSeconds(seconds)
+            }, //second
+            //			"q+" : Math.floor((this.getMonth()+3)/3),  //quarter
+            "S": function (milliseconds) {
+                date.setMilliseconds(milliseconds)
+            } //millisecond
+        };
     for (var k in o) {
         if (new RegExp("(" + k + ")").test(dateFormat)) {
             var s1 = RegExp.$1;
