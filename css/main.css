@@ -1,0 +1,141 @@
+body{
+    font-family: 'Microsoft Yahei', '微软雅黑', Helvetica, 'Hiragino Sans GB', Arial, sans-serif;
+    font-size: 14px;
+}
+a {
+    color: #333333;
+    text-decoration: none;
+    background-color: transparent;
+}
+a:hover{
+    color: #212e3c;
+    text-decoration: none;
+}
+
+.navbar-default .container-fluid{
+    height: 82px;
+    min-width: 800px;
+    background-image: url("../img/bg_top.png");
+    background-repeat: no-repeat;
+}
+.navbar {
+    margin-bottom: 0;
+    border: 1px solid transparent;
+}
+.navbar > .container-fluid .navbar-brand{
+    margin-left: 0;
+}
+.top-navbar{
+    overflow: auto;
+    white-space: nowrap;
+}
+.navbar-nav{
+    margin: 7.5px 0 2px 0;
+    overflow: auto;
+}
+.navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+    font-size: 18px;
+}
+.navbar-default .navbar-nav > li {
+    text-align: center;
+    cursor: pointer;
+}
+.navbar-default .navbar-nav > li.onShow > a{
+    color: #ffb643;
+}
+.navbar-default .navbar-nav > li > .title-hover {
+    color: #ffb643;
+}
+.navbar-default .navbar-nav > li > a:hover{
+    color: #ffb643;
+}
+.navbar-default{
+    background-color: #212e3c;
+    border: none;
+}
+.navbar-header{
+    margin-top: 16px;
+}
+.navbar-brand{
+    padding: 5px 5px;
+}
+
+.nav > li > a {
+    padding: 10px 10px;
+}
+.nav > li > a > span{
+    padding: 8px 2px;
+}
+
+/*侧边栏导航*/
+.sidebar{
+    padding-top: 10px;
+}
+.col-md-1{
+    min-width: 120px;
+    max-width: 136px;
+    padding-right: 0;
+    padding-left: 0;
+    text-align: center;
+}
+.col-md-1 .nav-sidebar{
+    padding: 0;
+}
+.menu_container>ul{
+    margin-top: 15px;
+    display: none;
+}
+.menu_container>ul.onShow{
+    display: block;
+    color: orange;
+}
+
+.nav-sidebar{
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+}
+.nav-sidebar > li > a{
+    padding: 5px 10px;
+    text-align: center;
+}
+.nav-sidebar > li > a{
+    padding: 5px 10px;
+    text-align: center;
+}
+.tool-sidebar{
+    margin-bottom: 0;
+    list-style: none;
+    padding: 0;
+}
+.nav-sidebar > li, .nav-sidebar > li > a, .tool-sidebar > li {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+.tool-sidebar > .tool-sidebar-1{
+    width: 58.3%;
+}
+.tool-sidebar > .tool-sidebar-2{
+    width: 38.2%;
+}
+.tool-sidebar > li > a{
+    position: relative;
+    display: block;
+    text-align: center;
+    padding: 5px 5px;
+    font-size: 12px;
+    color: #d1622b;
+}
+.tool-sidebar > li > a > span{
+    font-size: 14px;
+    display: block;
+    margin: 2px auto;
+}
+.tool-sidebar > li > a:hover, .tool-sidebar > li > a:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #d1622b;
+    cursor: pointer;
+}
