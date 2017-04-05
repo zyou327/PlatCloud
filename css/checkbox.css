@@ -1,11 +1,3 @@
-html,
-body {
-  height: 100%;
-}
-body {
-  background: #e6e6e6;
-  font-family: 'Source Sans Pro', sans-serif;
-}
 .container {
   width: 100%;
   height: 100%;
@@ -14,10 +6,8 @@ body {
   justify-content: center;
   align-items: center;
 }
-h1 {
-  font-family: 'Alegreya Sans', sans-serif;
-  font-weight: 300;
-  margin-top: 0;
+label{
+  font-weight: normal;
 }
 .control-group {
   display: inline-block;
@@ -33,8 +23,9 @@ h1 {
 .control {
   display: block;
   position: relative;
-  padding-left: 30px;
-  margin-bottom: 15px;
+  /*padding-left: 8px;*/
+  margin-top: 4px;
+  margin-bottom: 10px;
   cursor: pointer;
   font-size: 18px;
 }
@@ -49,21 +40,22 @@ h1 {
   left: 0;
   height: 20px;
   width: 20px;
-  background: #e6e6e6;
+  background: #fff;
+  border: 1px solid #ffb643;
 }
 .control--radio .control__indicator {
   border-radius: 50%;
 }
 .control:hover input ~ .control__indicator,
 .control input:focus ~ .control__indicator {
-  background: #ccc;
+  background: #ffb643;
 }
 .control input:checked ~ .control__indicator {
-  background: #2aa1c0;
+  background: #ffb643;
 }
 .control:hover input:not([disabled]):checked ~ .control__indicator,
 .control input:checked:focus ~ .control__indicator {
-  background: #0e647d;
+  background: #ffb643;
 }
 .control input:disabled ~ .control__indicator {
   background: #e6e6e6;
@@ -88,7 +80,7 @@ h1 {
   transform: rotate(45deg);
 }
 .control--checkbox input:disabled ~ .control__indicator:after {
-  border-color: #7b7b7b;
+  border-color: #ffb643;
 }
 .control--radio .control__indicator:after {
   left: 7px;
@@ -99,7 +91,7 @@ h1 {
   background: #fff;
 }
 .control--radio input:disabled ~ .control__indicator:after {
-  background: #7b7b7b;
+  background: #ffb643;
 }
 .select {
   position: relative;
@@ -115,7 +107,7 @@ h1 {
   outline: 0;
   border: 0;
   border-radius: 0;
-  background: #e6e6e6;
+  background: #ffb643;
   color: #7b7b7b;
   appearance: none;
   -webkit-appearance: none;
@@ -127,7 +119,7 @@ h1 {
 .select select:hover,
 .select select:focus {
   color: #000;
-  background: #ccc;
+  background: #ffb643;
 }
 .select select:disabled {
   opacity: 0.5;

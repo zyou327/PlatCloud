@@ -6,13 +6,16 @@
     <title>IndexDemo</title>
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/dashboard.css" rel="stylesheet">
+    <link href="css/jedate.css" rel="stylesheet">
     <link href="css/checkbox.css" rel="stylesheet">
+    <link href="css/timelinr.css" rel="stylesheet">
     <link href="css/main.css" rel="stylesheet">
     <script src="js/core/jquery.min.js"></script>
     <script src="js/core/bootstrap.min.js"></script>
+    <script src="js/core/jquery.timelinr-0.9.53.js"></script>
     <script src="js/core/main.js"></script>
+    <script src="js/core/jquery.jedate.js"></script>
     <title>义乌暴雨</title>
-
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -23,8 +26,9 @@
         <ul class="nav navbar-nav top-navbar navbar-right"></ul>
     </div>
 </nav>
-<div class="container-fluid">
-    <div class="row">
+<div class="container-fluid main-container">
+    <div id="main" class="row">
+        <!--左侧二级菜单-->
         <div class="col-md-1 sidebar">
             <div class="menu_container">
                 <ul class="nav nav-sidebar">
@@ -32,16 +36,100 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-11 time-bar">
-            <label class="control control--checkbox">
-                站点
-                <input type="checkbox"/>
-                <div class="control__indicator"></div>
-            </label>
-
+        <!--上部控制栏-->
+        <div class="col-md-11 col-md-offset-1">
+            <div class="col-md-12 time-bar">
+                <!--CheckBox-->
+                <div class="col-md-1">
+                    <label class="control control--checkbox">
+                        站点
+                        <input type="checkbox"/>
+                        <div class="control__indicator"></div>
+                    </label>
+                    <label class="control control--checkbox">
+                        要素
+                        <input type="checkbox"/>
+                        <div class="control__indicator"></div>
+                    </label>
+                </div>
+                <!--日历选择器-->
+                <div class="col-md-2">
+                        <p class="datep"><input class="datainp" id="dateinfo" type="text" placeholder="请选择时间"  readonly></p>
+                </div>
+                <!--时间轴选择器-->
+                <div id="timeline" class="col-md-7">
+                    <ul id="dates">
+                        <li><a href="#1300hr">13:00</a></li>
+                        <li><a href="#1310hr">13:10</a></li>
+                        <li><a href="#1320hr">13:20</a></li>
+                        <li><a href="#1330hr">13:30</a></li>
+                        <li><a href="#1340hr">13:40</a></li>
+                        <li><a href="#1350hr">13:50</a></li>
+                        <li><a href="#1400hr">14:00</a></li>
+                        <li><a href="#1410hr">14:10</a></li>
+                    </ul>
+                </div>
+                <!--播放控制-->
+                <div class="col-md-2 timeline-play">
+                    <ul class="list-inline">
+                        <li id="play-forward"><span class="glyphicon glyphicon-chevron-left"></span></li>
+                        <li id="play-next"><span class="glyphicon glyphicon-chevron-right"></span></li>
+                        <li id="play-start"><span class="glyphicon glyphicon-play"></span></li>
+                        <li id="play-stop"><span class="glyphicon glyphicon-stop"></span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12 content-index">
+                <ul id="issues">
+                    <li id="1300hr">
+                        <img src="img/jiangshui1.png">
+                    </li>
+                    <li id="1310hr">
+                        <img src="img/jiangshui2.png">
+                    </li>
+                    <li id="1320hr">
+                        <img src="img/jiangshui1.png">
+                    </li>
+                    <li id="1330hr">
+                        <img src="img/jiangshui2.png">
+                    </li>
+                    <li id="1340hr">
+                        <img src="img/jiangshui1.png">
+                    </li>
+                    <li id="1350hr">
+                        <img src="img/jiangshui2.png">
+                    </li>
+                    <li id="1400hr">
+                        <img src="img/jiangshui1.png">
+                    </li>
+                    <li id="1410hr">
+                        <img src="img/jiangshui2.png">
+                    </li>
+                </ul>
+            </div>
         </div>
+        <!--内容展示页面-->
+
     </div>
 </div>
 
+<script type="text/javascript">
+    $(function(){
+        $().timelinr({
+            autoPlay:'false',
+            autoPlayDirection: 'forward',
+            startAt: 4,
+            prevButton:"#play-forward",
+            nextButton:"#play-next"
+        })
+    });
+
+    $.jeDate("#dateinfo",{
+        format:"YYYY年MM月DD日 hh:mm",
+        minDate:"2014-09-19 00:00:00",
+        isinitVal:true,
+        isTime:true //isClear:false,
+    })
+</script>
 </body>
 </html>
